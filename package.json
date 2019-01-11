@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tejpoudel/RecipeKeeper/issues"
   },
-  "homepage": "https://github.com/tejpoudel/RecipeKeeper#readme"
+  "homepage": "https://github.com/tejpoudel/RecipeKeeper#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
