@@ -7,11 +7,19 @@
  // Set up PORT of the app
  const PORT = process.env.PORT || 8080;
 
+ app.use(express.static(__dirname + "/public"));
+ 
+
  // Sets up the express app to handle data parsing
  app.use(express.urlencoded({
      extended: true
  }));
  app.use(express.json());
+
+ var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
  // Establishing mysql connection
  const mysql = require('mysql');
@@ -70,6 +78,9 @@
 
  displayRecipes();
 
+//  var routes = require("./controllers/buttons.js");
+
+//  app.use(routes);
 
 
  db.connect((err) => {
